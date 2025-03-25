@@ -5,6 +5,7 @@ use App\Http\Controllers\LocationController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
 
 
 //Public Routes
@@ -35,4 +36,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('restaurant/{id}', [RestaurantController::class, 'getRestaurant']);
     Route::put('restaurant/{id}', [RestaurantController::class, 'updateRestaurant']);
     Route::delete('restaurant/{id}', [RestaurantController::class, 'deleteRestaurant']);
+
+    Route::post('role', [RoleController::class, 'createRole']);
+    Route::get('role', [RoleController::class, 'getRole']);
+    Route::get('role/{id}', [RoleController::class, 'getRole']);
+    Route::put('role/{id}', [RoleController::class, 'updateRole']);
+    Route::delete('role/{id}', [RoleController::class, 'deleteRole']);
 });
